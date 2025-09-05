@@ -92,7 +92,7 @@ const PYQs = () => {
         ...Object.fromEntries(Object.entries(filters).filter(([_, v]) => v !== "")),
       });
 
-      const response = await fetch(`http://localhost:5000/api/pyqs?${queryParams}`);
+      const response = await fetch(`https://latest-backend-n4r7.vercel.app/api/pyqs?${queryParams}`);
       const data = await response.json();
 
       if (response.ok) {
@@ -190,7 +190,7 @@ const PYQs = () => {
         hasFile: !!formData.file
       });
 
-      const response = await fetch("http://localhost:5000/api/pyqs", {
+      const response = await fetch("https://latest-backend-n4r7.vercel.app/api/pyqs", {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -234,7 +234,7 @@ const PYQs = () => {
 
   const handleDownload = async (pyqId, filename) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/pyqs/${pyqId}/download`);
+      const response = await fetch(`https://latest-backend-n4r7.vercel.app/api/pyqs/${pyqId}/download`);
 
       if (response.ok) {
         // Create blob and download
